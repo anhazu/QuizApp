@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Form, Input, Button, Row } from "antd";
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
 import { Typography } from "antd";
 import { useDispatch } from "react-redux";
@@ -32,68 +32,63 @@ function Login(params) {
   return (
     <div>
       <Row
-        type="flex"
-        justify="center"
-        align="middle"
-        style={{ minHeight: "100vh" }}
-      >
+        type='flex'
+        justify='center'
+        align='middle'
+        style={{ minHeight: "100vh" }}>
         <Form
           style={{ width: "400px" }}
           form={form}
-          name="horizontal_login"
-          onFinish={onFinish}
-        >
-          <Title justify="center" align="middle">
+          name='horizontal_login'
+          onFinish={onFinish}>
+          <Title justify='center' align='middle'>
             {" "}
             Login Form
           </Title>
           <Form.Item
-            name="username"
+            name='username'
             rules={[
               {
                 required: true,
                 message: "Please input your username!",
               },
-            ]}
-          >
+            ]}>
             <Input
-              prefix={<UserOutlined className="site-form-item-icon" />}
-              placeholder="Username"
+              prefix={<UserOutlined className='site-form-item-icon' />}
+              placeholder='Username'
             />
           </Form.Item>
           <Form.Item
-            name="password"
+            name='password'
             rules={[
               {
                 required: true,
                 message: "Please input your password!",
               },
-            ]}
-          >
+            ]}>
             <Input
-              prefix={<LockOutlined className="site-form-item-icon" />}
-              type="password"
-              placeholder="Password"
+              prefix={<LockOutlined className='site-form-item-icon' />}
+              type='password'
+              placeholder='Password'
             />
           </Form.Item>
           <Form.Item shouldUpdate>
             {() => (
               <Button
                 block
-                type="primary"
-                htmlType="submit"
+                type='primary'
+                htmlType='submit'
                 disabled={
                   !form.isFieldsTouched(true) ||
                   !!form.getFieldsError().filter(({ errors }) => errors.length)
                     .length
-                }
-              >
+                }>
                 Login
               </Button>
             )}
           </Form.Item>
           <Form.Item>
-            Or <a href="/register">register</a>
+            Or <a href='/register'>register</a>
           </Form.Item>
         </Form>
       </Row>

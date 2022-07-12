@@ -3,7 +3,7 @@ import { Typography, Col, Row } from "antd";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getQuestion } from "../../redux/question/action";
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 import { submitQuestion } from "../../redux/answer/action";
 import { useNavigate } from "react-router-dom";
 import { saveQuestionSuccess } from "../../redux/answer/reducer";
@@ -67,18 +67,17 @@ function ListQuestion() {
   return (
     <div>
       <Navbar />
-      <div className="container">
-        <div className="container__question">
-          <Title justify="center" align="middle" style={{ marginLeft: "50px" }}>
+      <div className='container'>
+        <div className='container__question'>
+          <Title justify='center' align='middle' style={{ marginLeft: "50px" }}>
             {" "}
             Question {currentIndex + 1}/ {listQuestion.length}{" "}
           </Title>
           <Title
-            justify="center"
-            align="middle"
+            justify='center'
+            align='middle'
             level={3}
-            style={{ marginLeft: "50px" }}
-          >
+            style={{ marginLeft: "50px" }}>
             {question?.question}
           </Title>
         </div>
@@ -86,37 +85,33 @@ function ListQuestion() {
           {options.map((option, index) => (
             <Button
               block
-              size="large"
-              shape="round"
+              size='large'
+              shape='round'
               style={{ margin: "15px" }}
               key={index}
-              onClick={() => handleAnswer(option)}
-            >
+              onClick={() => handleAnswer(option)}>
               {option}
             </Button>
           ))}
 
           <Row
-            type="flex"
-            justify="center"
-            align="middle"
-            md={{ span: 12, offset: 6 }}
-          >
+            type='flex'
+            justify='center'
+            align='middle'
+            md={{ span: 12, offset: 6 }}>
             <Button
-              shape="round"
+              shape='round'
               style={{ margin: "20px" }}
               disabled={currentIndex < 1 ? true : false}
               onClick={handleBack}
-              style={{ marginLeft: "50px" }}
-            >
+              style={{ marginLeft: "50px" }}>
               Back
             </Button>
             <Button
-              shape="round"
-              type="flex"
+              shape='round'
+              type='flex'
               style={{ margin: "20px" }}
-              onClick={handleNextAndSubmit}
-            >
+              onClick={handleNextAndSubmit}>
               {currentIndex + 1 < listQuestion.length ? "Next" : "Submit"}
             </Button>
           </Row>

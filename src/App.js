@@ -41,29 +41,29 @@ function App() {
         dispatch(refresh(refreshToken));
       });
     }
-  }, [accessToken, refreshToken]);
+  }, [accessToken, dispatch, refreshToken]);
   return (
     <BrowserRouter>
       <Routes>
         <Route element={<ProtectedRoute role={role} />}>
-          <Route path="/" element={<Login />} />
-          <Route path="/register" element={<Register />} />
+          <Route path='/' element={<Login />} />
+          <Route path='/register' element={<Register />} />
         </Route>
         <Route element={<UserRoute role={role} accessToken={accessToken} />}>
-          <Route path="/quizsetting" element={<QuestionSetting />} />
-          <Route path="/listquiz" element={<ListQuestion />} />
-          <Route path="/resultquiz" element={<ResultPage />} />
+          <Route path='/quizsetting' element={<QuestionSetting />} />
+          <Route path='/listquiz' element={<ListQuestion />} />
+          <Route path='/resultquiz' element={<ResultPage />} />
         </Route>
         <Route element={<AdminRoute role={role} accessToken={accessToken} />}>
-          <Route path="/admin" element={<Admin />}>
-            <Route path="/admin/getusers" element={<GetUsers />} />
-            <Route path="/admin/createuser" element={<CreateUser />} />
+          <Route path='/admin' element={<Admin />}>
+            <Route path='/admin/getusers' element={<GetUsers />} />
+            <Route path='/admin/createuser' element={<CreateUser />} />
 
-            <Route path="/admin/getquestions" element={<GetQuestion />} />
-            <Route path="/admin/createquestion" element={<CreateQuestion />} />
+            <Route path='/admin/getquestions' element={<GetQuestion />} />
+            <Route path='/admin/createquestion' element={<CreateQuestion />} />
           </Route>
         </Route>
-        <Route path="*" element={<NotFound />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

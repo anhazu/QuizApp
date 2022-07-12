@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Form, Input, Button, Row } from "antd";
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 import { useNavigate } from "react-router-dom";
 import { Typography } from "antd";
 import { useDispatch } from "react-redux";
@@ -32,95 +32,87 @@ function CreateQuestion(params) {
   };
 
   return (
-    <Row type="flex" justify="center" align="middle">
+    <Row type='flex' justify='center' align='middle'>
       <Form
         style={{ width: "400px" }}
         form={form}
-        name="horizontal_login"
-        onFinish={onFinish}
-      >
-        <Title justify="center" align="middle">
+        name='horizontal_login'
+        onFinish={onFinish}>
+        <Title justify='center' align='middle'>
           {" "}
           Create Question
         </Title>
         <Form.Item
-          name="question"
+          name='question'
           rules={[
             {
               required: true,
               message: "Please input your question!",
             },
-          ]}
-        >
-          <Input placeholder="Question" />
+          ]}>
+          <Input placeholder='Question' />
         </Form.Item>
         <Form.Item
-          name="answer1"
+          name='answer1'
           rules={[
             {
               required: true,
               message: "Please input your answer1!",
             },
-          ]}
-        >
-          <Input placeholder="Answer 1" />
+          ]}>
+          <Input placeholder='Answer 1' />
         </Form.Item>
         <Form.Item
-          name="answer2"
+          name='answer2'
           rules={[
             {
               required: true,
               message: "Please input your answer2!",
             },
-          ]}
-        >
-          <Input placeholder="Answer 2" />
+          ]}>
+          <Input placeholder='Answer 2' />
         </Form.Item>
         <Form.Item
-          name="answer3"
+          name='answer3'
           rules={[
             {
               required: true,
               message: "Please input your answer3!",
             },
-          ]}
-        >
-          <Input placeholder="Answer 3" />
+          ]}>
+          <Input placeholder='Answer 3' />
         </Form.Item>
         <Form.Item
-          name="answer4"
+          name='answer4'
           rules={[
             {
               required: true,
               message: "Please input your answer4!",
             },
-          ]}
-        >
-          <Input placeholder="Answer 4" />
+          ]}>
+          <Input placeholder='Answer 4' />
         </Form.Item>
         <Form.Item
-          name="correctanswer"
+          name='correctanswer'
           rules={[
             {
               required: true,
               message: "Please input your correct answer!",
             },
-          ]}
-        >
-          <Input placeholder="Correct answer" />
+          ]}>
+          <Input placeholder='Correct answer' />
         </Form.Item>
         <Form.Item shouldUpdate>
           {() => (
             <Button
               block
-              type="primary"
-              htmlType="submit"
+              type='primary'
+              htmlType='submit'
               disabled={
                 !form.isFieldsTouched(true) ||
                 !!form.getFieldsError().filter(({ errors }) => errors.length)
                   .length
-              }
-            >
+              }>
               Create
             </Button>
           )}

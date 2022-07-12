@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 import "./index.css";
 import { useState } from "react";
 import { Form, Input, InputNumber, Popconfirm, Table, Typography } from "antd";
@@ -48,8 +48,7 @@ function GetQuestion() {
                 required: true,
                 message: `Please Input ${title}!`,
               },
-            ]}
-          >
+            ]}>
             {inputNode}
           </Form.Item>
         ) : (
@@ -156,11 +155,10 @@ function GetQuestion() {
               onClick={() => save(record.key)}
               style={{
                 marginRight: 8,
-              }}
-            >
+              }}>
               Save
             </Typography.Link>
-            <Popconfirm title="Sure to cancel?" onConfirm={cancel}>
+            <Popconfirm title='Sure to cancel?' onConfirm={cancel}>
               <a>Cancel</a>
             </Popconfirm>
           </span>
@@ -168,8 +166,7 @@ function GetQuestion() {
           <span>
             <Typography.Link
               disabled={editingKey !== ""}
-              onClick={() => edit(record)}
-            >
+              onClick={() => edit(record)}>
               Edit
             </Typography.Link>
             <Typography.Link
@@ -213,7 +210,7 @@ function GetQuestion() {
           bordered
           dataSource={data}
           columns={mergedColumns}
-          rowClassName="editable-row"
+          rowClassName='editable-row'
           pagination={{
             onChange: cancel,
           }}

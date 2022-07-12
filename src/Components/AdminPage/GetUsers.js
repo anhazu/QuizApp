@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 import "./index.css";
 import { useState } from "react";
 import {
@@ -19,9 +19,11 @@ function GetUsers() {
     (state) => state.auth.auth.tokens.access.token
   );
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getListUser(accessToken));
-  }, [accessToken]);
+  }, [accessToken, dispatch]);
+
   const listUserAdmin = useSelector((state) => state.admin.listUser);
   const listUser = listUserAdmin.map((user) => ({
     key: user.id,
@@ -31,6 +33,7 @@ function GetUsers() {
     score: user.score,
     avatar: user.avatar,
   }));
+
   const EditableCell = ({
     editing,
     dataIndex,
@@ -55,8 +58,7 @@ function GetUsers() {
                 required: true,
                 message: `Please Input ${title}!`,
               },
-            ]}
-          >
+            ]}>
             {inputNode}
           </Form.Item>
         ) : (
@@ -170,20 +172,18 @@ function GetUsers() {
               onClick={() => save(record.key)}
               style={{
                 marginRight: 8,
-              }}
-            >
+              }}>
               Save
             </Typography.Link>
-            <Popconfirm title="Sure to cancel?" onConfirm={cancel}>
-              <a>Cancel</a>
+            <Popconfirm title='Sure to cancel?' onConfirm={cancel}>
+              <a href>Cancel</a>
             </Popconfirm>
           </span>
         ) : (
           <span>
             <Typography.Link
               disabled={editingKey !== ""}
-              onClick={() => edit(record)}
-            >
+              onClick={() => edit(record)}>
               Edit
             </Typography.Link>
             <Typography.Link
@@ -227,7 +227,7 @@ function GetUsers() {
           bordered
           dataSource={data}
           columns={mergedColumns}
-          rowClassName="editable-row"
+          rowClassName='editable-row'
           pagination={{
             onChange: cancel,
           }}

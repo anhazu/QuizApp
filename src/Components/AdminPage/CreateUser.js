@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Form, Input, Button, Row } from "antd";
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 import { useNavigate } from "react-router-dom";
 import { Typography } from "antd";
 import { useDispatch } from "react-redux";
@@ -32,73 +32,67 @@ function CreateUser(params) {
   };
 
   return (
-    <Row type="flex" justify="center" align="middle">
+    <Row type='flex' justify='center' align='middle'>
       <Form
         style={{ width: "400px" }}
         form={form}
-        name="horizontal_login"
-        onFinish={onFinish}
-      >
-        <Title justify="center" align="middle">
+        name='horizontal_login'
+        onFinish={onFinish}>
+        <Title justify='center' align='middle'>
           {" "}
           Create new User
         </Title>
         <Form.Item
-          name="username"
+          name='username'
           rules={[
             {
               required: true,
               message: "Please input your username!",
             },
-          ]}
-        >
-          <Input placeholder="Username" />
+          ]}>
+          <Input placeholder='Username' />
         </Form.Item>
         <Form.Item
-          name="password"
+          name='password'
           rules={[
             {
               required: true,
               message: "Please input your password!",
             },
-          ]}
-        >
-          <Input type="password" placeholder="Password" />
+          ]}>
+          <Input type='password' placeholder='Password' />
         </Form.Item>
         <Form.Item
-          name="email"
+          name='email'
           rules={[
             {
               required: true,
               message: "Please input your email!",
             },
-          ]}
-        >
-          <Input type="email" placeholder="Email" />
+          ]}>
+          <Input type='email' placeholder='Email' />
         </Form.Item>
         <Form.Item
-          name="role"
+          name='role'
           rules={[
             {
               required: true,
               message: "Please input your role!",
             },
-          ]}
-        >
-          <Input placeholder="Role" />
+          ]}>
+          <Input placeholder='Role' />
         </Form.Item>
         <Form.Item shouldUpdate>
           {() => (
             <Button
               block
-              type="primary"
-              htmlType="submit"
+              type='primary'
+              htmlType='submit'
               disabled={
                 !form.isFieldsTouched(true) ||
                 !!form.getFieldsError().filter(({ errors }) => errors.length)
                   .length
-              }
-            >
+              }>
               Create
             </Button>
           )}
