@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 
 const { Title } = Typography;
 
-function CreateQuestion(params) {
+const CreateQuestion = (params) => {
   const [form] = Form.useForm();
   const nav = useNavigate();
   const dispatch = useDispatch();
@@ -120,5 +120,5 @@ function CreateQuestion(params) {
       </Form>
     </Row>
   );
-}
+};
 export default CreateQuestion;

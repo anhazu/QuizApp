@@ -6,7 +6,7 @@ import { Form, Input, InputNumber, Popconfirm, Table, Typography } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import { getListQuestion, updateQuestion } from "../../redux/admin/action";
 
-function GetQuestion() {
+const GetQuestion = () => {
   const accessToken = useSelector(
     (state) => state.auth.auth.tokens.access.token
   );
@@ -218,6 +218,6 @@ function GetQuestion() {
       </Form>
     </div>
   );
-}
+};
 
 export default GetQuestion;

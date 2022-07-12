@@ -7,7 +7,7 @@ import { Col } from "antd";
 import Navbar from "../StartPage/Navbar";
 const { Title } = Typography;
 
-function QuestionSetting() {
+const QuestionSetting = () => {
   const nav = useNavigate();
   const dispatch = useDispatch();
   const maxQuestion = useSelector((state) => state.question.maxQuestion);
@@ -21,22 +21,21 @@ function QuestionSetting() {
   return (
     <div>
       <Navbar />
-      <Col type="flex" justify="center" align="middle">
+      <Col type='flex' justify='center' align='middle'>
         <Title level={3}>Choose Amount of question: </Title>
         <InputNumber min={1} max={maxQuestion} onChange={handleChange} />
         <br />
         <br />
         <Button
-          size="medium"
-          shape="round"
-          type="primary"
-          onClick={handleSubmit}
-        >
+          size='medium'
+          shape='round'
+          type='primary'
+          onClick={handleSubmit}>
           Submit
         </Button>
       </Col>
     </div>
   );
-}
+};
 
 export default QuestionSetting;

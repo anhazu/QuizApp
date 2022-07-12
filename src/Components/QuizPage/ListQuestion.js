@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { saveQuestionSuccess } from "../../redux/answer/reducer";
 import Navbar from "../StartPage/Navbar";
 
-function ListQuestion() {
+const ListQuestion = () => {
   const { Title } = Typography;
   const dispatch = useDispatch();
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -119,5 +119,5 @@ function ListQuestion() {
       </div>
     </div>
   );
-}
+};
 export default ListQuestion;

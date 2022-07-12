@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 
 const { Title } = Typography;
 
-function CreateUser(params) {
+const CreateUser = (params) => {
   const [form] = Form.useForm();
   const nav = useNavigate();
   const dispatch = useDispatch();
@@ -100,5 +100,5 @@ function CreateUser(params) {
       </Form>
     </Row>
   );
-}
+};
 export default CreateUser;

@@ -14,7 +14,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { getListUser, updateUser } from "../../redux/admin/action";
 
-function GetUsers() {
+const GetUsers = () => {
   const accessToken = useSelector(
     (state) => state.auth.auth.tokens.access.token
   );
@@ -235,6 +235,6 @@ function GetUsers() {
       </Form>
     </div>
   );
-}
+};
 
 export default GetUsers;

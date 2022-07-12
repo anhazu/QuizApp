@@ -15,7 +15,7 @@ import Navbar from "../StartPage/Navbar";
 
 const { Header, Sider, Content } = Layout;
 
-function Admin() {
+const Admin = () => {
   const userName = useSelector((state) => state.auth?.auth?.user?.username);
   const accessToken = useSelector(
     (state) => state.auth.auth.tokens.access.token
@@ -37,33 +37,30 @@ function Admin() {
     <div>
       <Navbar />
       <Layout>
-        <Sider trigger={null} theme="light">
-          <Menu theme="light" mode="inline">
-            <Menu.SubMenu key="1" icon={<FolderOpenOutlined />} title="User">
-              <Menu.Item key="u1" icon={<UserOutlined />} onClick={handleUsers}>
+        <Sider trigger={null} theme='light'>
+          <Menu theme='light' mode='inline'>
+            <Menu.SubMenu key='1' icon={<FolderOpenOutlined />} title='User'>
+              <Menu.Item key='u1' icon={<UserOutlined />} onClick={handleUsers}>
                 Get User
               </Menu.Item>
               <Menu.Item
-                key="u2"
+                key='u2'
                 icon={<UserAddOutlined />}
-                onClick={() => navigate("/admin/createuser")}
-              >
+                onClick={() => navigate("/admin/createuser")}>
                 Create User
               </Menu.Item>
             </Menu.SubMenu>
-            <Menu.SubMenu key="2" icon={<ReadOutlined />} title="Question">
+            <Menu.SubMenu key='2' icon={<ReadOutlined />} title='Question'>
               <Menu.Item
-                key="q1"
+                key='q1'
                 icon={<FolderOutlined />}
-                onClick={handleQuestions}
-              >
+                onClick={handleQuestions}>
                 Get Questions
               </Menu.Item>
               <Menu.Item
-                key="q2"
+                key='q2'
                 icon={<FolderAddOutlined />}
-                onClick={() => navigate("/admin/createquestion")}
-              >
+                onClick={() => navigate("/admin/createquestion")}>
                 Create Question
               </Menu.Item>
             </Menu.SubMenu>
@@ -75,14 +72,13 @@ function Admin() {
               margin: "16px 16px",
               padding: 24,
               minHeight: 280,
-            }}
-          >
+            }}>
             <Outlet />
           </Content>
         </Layout>
       </Layout>
     </div>
   );
-}
+};
 
 export default Admin;
